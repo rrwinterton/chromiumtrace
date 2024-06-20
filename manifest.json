@@ -1,0 +1,21 @@
+{
+  "name": "InsertStaticTraceMarks",
+  "version": "1.0",
+  "manifest_version": 3,
+  "minimum_chrome_version": "105.0",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "host_permissions": ["*://*/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "run_at": "document_start",
+      "js": ["inject.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["traces.js"],
+      "matches": ["*://*/*"]
+    }
+  ]
+}
